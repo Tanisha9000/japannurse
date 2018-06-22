@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="theme" text-center> 	
+        <ion-title>JOB VIEW</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="staffnurse">
+        <h2>{{depttitle}}</h2>
+        <p>{{title}}</p>
+        <p><img src="assets/imgs/arrow2.png"/>{{locations}}</p>
+    </div>
+    <h2>Job Summary</h2>
+    <p>{{jobsummary}}</p>
+    <div class="exp">	
+        <h2>Experience and Education Requirements</h2>
+        <ul>	
+            <li>{{expnedu}}</li>
+        </ul>
+    </div>
+
+    <div class="socialbox">
+        <p>Share this job</p>
+        <div class="social">	
+            <ul>			
+                <li (click)="sharefacebook()"><img src="assets/imgs/facebook.png"/></li>
+                <li (click)="sharetwitter()"><img src="assets/imgs/twitter.png"/></li>
+                <li (click)="shareinsta()"><img src="assets/imgs/linkdin.png"/></li>
+                <!--<li (click)="sharegoogle()"><img src="assets/imgs/googleplus.png"/></li>-->
+            </ul>
+        </div>
+    </div>
+
+    <button ion-button  full color="theme" class="custom-btn" (click)="applyJob()">{{btnname}}</button>
+    <button ion-button  full color="theme" class="custom-btn" (click)="requestjob()">Request for more info</button>
+</ion-content>

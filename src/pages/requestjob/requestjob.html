@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="theme" text-center>
+        <ion-title>MORE INFO</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="form-box">
+        <form>
+            <ion-list no-lines no-margin>
+                <div *ngFor="let ch of allchat">
+                    <div class="msg"  *ngIf="ch.sender_id == userid">
+
+                     <h3>Me:</h3>
+                        <P>{{ch.message}}</P>
+
+                    </div>
+
+                    <div class="msg"  *ngIf="ch.sender_id != userid">
+
+                         <h3>Admin:</h3>
+                        <P>{{ch.message}}</P>
+
+                    </div>
+                </div>
+                <ion-item no-padding>
+                    <ion-textarea placeholder="Message" rows="4" [(ngModel)]="data.message" name="message"></ion-textarea>
+                </ion-item>
+
+            </ion-list>
+            <button ion-button  color="theme" class="custom-btn" (click)="requeston()" > Send</button>
+
+        </form>
+    </div>
+
+</ion-content>

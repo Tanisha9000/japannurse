@@ -1,0 +1,15 @@
+{
+  "name": "japanurseapp1",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+    "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:8080"
+    }
+  ]
+}
+                   

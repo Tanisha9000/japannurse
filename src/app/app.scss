@@ -1,0 +1,348 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.sidemenu{
+	.label{
+		    color: #383838;
+    font-size: 14px;
+    font-weight: 400;
+
+
+   		
+	}
+
+	ion-icon{
+    	          width: 30px;
+    height: 35px;
+    display: inline-block;
+    padding: 5px 0;
+    margin: 3px 0 0 0;
+
+    img{
+    	margin: -2px 0;
+	    }
+    }
+
+	.item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+    background-image: none;
+   
+}
+.item{
+	padding-left: 14px;
+
+}
+.input-wraper{
+	  height: 33px;
+}
+.item-block{
+	    min-height: 30px;
+
+}
+.header .toolbar:last-child .toolbar-background {
+    border-width: 0px;
+}
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+   
+    background-image:none;
+    
+}
+.header{
+	.item{
+    	background-color: transparent;
+          padding-left: 4px;
+    }
+}
+ion-avatar ion-img, ion-avatar img {
+   
+    width: 75px;
+    height: 75px;
+
+    
+    }
+
+ion-avatar{
+	margin-right: 5px !important
+}
+    	.item-inner .input-wrapper{
+    		.label h2{
+    		font-size: 14px; 	
+	        color: #383838;
+	        font-weight: 600;
+    		}
+    		.label{
+    			 margin: 0;
+    		}
+    	}  		
+    	
+    ion-list{
+          margin: 10px 0;
+    }
+
+}
+
+.sidemenu ion-list button:nth-child(4) img {
+    margin: -7px 0px;
+}
+.sidemenu ion-list button:nth-child(6) img {
+    margin: -7px 0px;
+}
+/*FORM CSS*/
+/*global*/
+
+.form-box{
+    ion-input{
+        
+        background: #F9F9F9;
+        background: #dededefa;
+        border-radius: 5px;
+    margin-bottom: 10px;
+       font-size: 14px;
+                .text-input{
+               margin-left: 10px !important;
+            font-size: 14px;
+            font-weight: 400;
+        }
+                .input-cover {
+            position: relative;
+        }
+    }
+    .list .item-input.item-input-has-focus{
+    border-bottom: 0px;
+    box-shadow: none !important;
+}
+
+.item-input.item-input-has-focus .item-inner{
+    border-bottom: 0px;
+    box-shadow: none !important;
+}
+
+}
+ .form-box form ion-item ion-label {
+    white-space: pre-line;
+    overflow: visible;
+    font-size: 14px;
+    color: #383838 !important;
+    font-weight: 600;
+}
+
+.list-md .item-input:last-child {
+      border: 0 !important;
+}
+.input-cover {
+    position: relative;
+}
+.toolbar-title {
+   
+    font-size: 15px;
+    font-weight:700;
+    color: #fff;
+    text-align: center;
+}
+
+/*placeholder*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #707070;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #707070;
+  font-size: 14px;
+  font-weight: 400;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #707070;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #707070;
+  font-size: 14px;
+  font-weight: 400;
+}
+.custom-btn{
+    background-color:theme;
+    border-radius: 5px;
+        text-transform: capitalize;
+      height: 3.6rem !important;
+        box-shadow: none;
+    
+}
+
+ion-alert{
+  color: #fe9833;
+  .alert-radio-inner{
+        border-color: #fe9833;
+  }
+
+
+
+}
+/*profile upload*/
+.action-sheet-group{
+  position: relative;
+}
+.action-sheet-ios .action-sheet-title, .action-sheet-ios .action-sheet-button {
+   
+  border-bottom: none;
+    
+}
+.action-sheet-group .button-inner {
+   
+    justify-content: start;
+   
+}
+
+.action-sheet-group .action-sheet-button {
+  text-align: left;
+    text-align: start;
+    position: relative;
+    overflow: hidden;
+    min-height: 4.8rem;
+    font-size: 1.6rem;
+    color: #222;
+    background: transparent;
+    padding: 0 16px;
+    color: #fe9833;
+    
+}
+.action-sheet-group .close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 17%;
+}
+/*profile upload*/
+
+/*pop up select*/
+.alert-radio-group [aria-checked=true] .alert-radio-label {
+    color: #fe9833;
+}
+
+.alert-radio-group [aria-checked=true] .alert-radio-inner {
+    
+    border-color: #fe9833;
+ 
+}
+.alert-radio-group [aria-checked=true] .alert-radio-icon {
+    border-color: #fe9833;
+}
+.alert-md .alert-radio-inner{
+  
+    background-color: #fe9833;
+   
+}
+
+.alert-button-group .alert-button {
+   
+    color: #fe9f41;
+   
+}
+/*pop up select*/
+
+/*title center*/
+
+
+
+ion-title.title.title-md{
+  left: 0;
+    top: 0;
+        padding: 0 43px 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+}
+
+
+/*header shadow and bottom line*/
+
+.header .toolbar-background{
+  
+   
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+
+    background-image:none;
+   
+}
+
+.item-input-has-focus{
+  color: #383838 !important;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+   border-bottom-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
+    border-bottom-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+  border-bottom-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+     border-bottom-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+ .error {
+   height: 27px;
+    min-height: 22px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    
+    
+    p{
+          color: #ff4242;
+    font-weight: 500;
+    padding: 5px 0;
+    }
+
+    ion-label{
+   height: 26px;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px !important;
+    }
+}
+.errormsg {
+  color: #ff4242;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+/*datetime signup page*/
+.picker-ios .picker-button, .picker-ios .picker-button.activated {
+   
+    color: #fe9833;
+  
+}
+.back-button-text-ios{ display: none; }

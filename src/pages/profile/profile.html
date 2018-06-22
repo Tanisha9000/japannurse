@@ -1,0 +1,32 @@
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <button ion-button menuToggle>
+            <ion-icon><img src="assets/imgs/menu.png"/></ion-icon>
+        </button>
+        <ion-title>PROFILE</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="profilepic">
+        <img [src]="userimage"/>
+    </div>
+    <div class="profiledetail">
+        <ion-item-group class="box">		    
+            <ion-item no-padding><h2>Username :</h2><p>{{username}}</p></ion-item>
+            <ion-item no-padding><h2>Email :</h2><p>{{email}}</p></ion-item>
+            <ion-item no-padding><h2> U.S Contact Info :</h2><p>{{uscontact}}</p></ion-item>
+            <!--<ion-item no-padding><h2> Overseas Contact Info :</h2><p>{{overcontact}}</p></ion-item>-->
+            <ion-item no-padding><h2>City :</h2><p>{{city}}</p></ion-item>
+            <ion-item no-padding><h2>Gender :</h2><p>{{gender}}</p></ion-item>
+        </ion-item-group>
+
+    </div>
+
+    <div class="editbtn"><p>Edit Profile </p><div (click)="editprofile()"><img src="assets/imgs/arrownext.png"></div></div>
+    <div class="editbtn"><p>Change Password</p><div (click)="changepass()"><img src="assets/imgs/arrownext.png"></div></div>
+
+</ion-content>

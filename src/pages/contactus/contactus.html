@@ -1,0 +1,93 @@
+<!--
+  Generated template for the ContactusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <button ion-button menuToggle>
+            <ion-icon><img src="assets/imgs/menu.png"/></ion-icon>
+        </button>
+        <ion-title>CONTRACT US</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <div class="form-box">
+        <form [formGroup]="myform" (submit)="contract(myform)">
+            <ion-list no-lines>
+                <ion-item no-padding>
+                    <ion-label stacked>Email Address*</ion-label>
+                    <ion-input type="email" placeholder="Enter email address" formControlName="email" [class.invalid]="!myform.controls.email.valid && (myform.controls.email.dirty)"></ion-input>
+                </ion-item>
+                <ion-item class="error" *ngIf="!myform.controls.email.valid  && (myform.controls.email.dirty)">
+                    <p>Please enter a valid email.</p>
+                </ion-item>
+                <ion-item no-padding>
+                    <ion-label stacked>First Name*</ion-label>
+                    <ion-input type="text" placeholder="First name" formControlName="firstname" [class.invalid]="!myform.controls.firstname.valid && (myform.controls.firstname.dirty)"></ion-input>
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.firstname.valid  && (myform.controls.firstname.dirty)">
+                    <p>Please enter a valid first name.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Last Name*</ion-label>
+                    <ion-input type="text" placeholder="Last Name" formControlName="lastname" [class.invalid]="!myform.controls.lastname.valid && (myform.controls.lastname.dirty)"></ion-input>		    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.lastname.valid  && (myform.controls.lastname.dirty)">
+                    <p>Please enter a valid last name.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Business Phone*</ion-label>
+                    <ion-input type="number" placeholder="1234567890" formControlName="businessphone" [class.invalid]="!myform.controls.businessphone.valid && (myform.controls.businessphone.dirty)"></ion-input>		  			    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.businessphone.valid  && (myform.controls.businessphone.dirty)">
+                    <p>Please enter a valid businees phone.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Military Base*</ion-label>
+                    <ion-input type="text" placeholder="Enter military base" formControlName="military" [class.invalid]="!myform.controls.military.valid && (myform.controls.military.dirty)"></ion-input>		  			    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.military.valid  && (myform.controls.military.dirty)">
+                    <p>Please enter military base.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Japan Cell Number*</ion-label>
+                    <ion-input type="number" placeholder="1234567890" formControlName="japancell" [class.invalid]="!myform.controls.japancell.valid && (myform.controls.japancell.dirty)"></ion-input>		  			    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.japancell.valid  && (myform.controls.japancell.dirty)">
+                    <p>Please enter a japan cell number.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>U S Cell Number*</ion-label>
+                    <ion-input type="number" placeholder="1234567890" formControlName="usnumber" [class.invalid]="!myform.controls.usnumber.valid && (myform.controls.usnumber.dirty)"></ion-input>		  			    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.usnumber.valid  && (myform.controls.usnumber.dirty)">
+                    <p>Please enter U S cell number.</p>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Current Location*</ion-label>
+                    <ion-input type="text" placeholder="Current Location" formControlName="location" [class.invalid]="!myform.controls.location.valid && (myform.controls.location.dirty)"></ion-input>		  			    
+                </ion-item>
+                <ion-item class="error"  *ngIf="!myform.controls.location.valid  && (myform.controls.location.dirty)">
+                    <p>Please enter your current location.</p>
+                </ion-item>
+
+                <button ion-button  color="theme" full class="custom-btn">Submit</button>
+            </ion-list>
+
+        </form>
+    </div>
+
+</ion-content> 

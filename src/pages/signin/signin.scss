@@ -1,0 +1,28 @@
+page-signin {
+.logo{
+	       margin: 23px auto 10px auto;
+    width: 60%;
+    text-align: center;
+}
+	.forgot-box{
+		    padding: 10px 0;
+		text-align: center;
+		.forgot{
+			font-size: 14px;
+			color: #383838;
+		}
+		.dont{
+			color: #707070;
+			.signup{
+			color: #FE9833;
+			font-weight: 600px;
+			margin: 30px 0;  
+		}
+		}
+
+	}
+/*            .invalid {
+        border: 1px solid #ea6153;
+    }*/
+}
+

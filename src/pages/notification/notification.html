@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <ion-title>NOTIFICATIONS</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="staffbox" *ngFor="let item of allnotifications; let i =index">
+        <ion-list class="" no-lines no-margin>
+            <ion-item no-padding>
+                <h2>{{item.restdata.job.department.title}}</h2> 
+                <p>{{item.restdata.job.subdepartment.title}}</p>
+                <p class="abu"><img src="assets/imgs/arrow2.png"/>{{item.location}}</p>
+                <div class="mint" item-end no-margin> 
+                    <p text-right>{{item.min}}</p>
+                    <button ion-button   color="theme" class="custom-btn" (click)="jobview(item.restdata.job_id)" >View jobs</button>
+                    <button ion-button   color="theme" class="custom-btn" (click)="deletejob(item.restdata.id,i)" >Delete</button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div><!--END-->
+</ion-content>

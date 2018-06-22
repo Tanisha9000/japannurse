@@ -1,0 +1,103 @@
+page-editprofile {
+
+    .item.item-block .item-inner {
+        border-bottom: 0.55px solid #DBDBDB;
+    }
+
+    .profiledetail{
+        .box{
+
+            ion-label{
+                color: #383838;
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0 6px 0 0;
+            }
+
+
+        }
+
+        .input-wrapper{
+            border-bottom: 0.55px solid #DBDBDB;
+        }
+        input{
+            margin: 0
+        }
+        .text-input{
+            margin-left: 0px;
+           
+                font-size: 14px;
+        }
+        ion-select{
+
+            color: #707070;
+            font-size: 14px;
+            font-weight: 400;
+            max-width: 88%;
+            padding-left: 0;
+            padding: 0 7px 0 0;
+            float: left;
+            width: 78%;
+        }
+
+        .emailer{
+            position: relative;
+
+            button{
+                position: absolute;
+                right: 5px;
+                margin: 0;
+                padding: 0px;
+                background: transparent;
+
+            }
+        }
+    }
+    .profilepic{
+        width: 100px;
+        height: 100px;
+        margin: 18px auto;
+        border-radius: 50%;
+        position: relative;
+
+        .camera{
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            background: #000;
+            border: 2px solid #fff;
+            position: absolute;
+
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pic{
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                border-radius: 50%;
+                 img{
+            width: 100%;
+    height: -webkit-fill-available;
+    }
+        }
+    }
+
+    /*camera close*/
+
+    .close{
+        display: inline-block;
+        width: 14%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .action-sheet.action-sheet-group:last-child {
+    padding-bottom: 0.8rem;
+    position: relative;
+}
+
+}

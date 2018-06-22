@@ -1,0 +1,66 @@
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <ion-title>REGISTER</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="form-box">
+        <form #myform="ngForm">
+            <ion-list no-lines style="margin-bottom: 30px;">
+
+                <ion-item no-padding>
+                    <ion-label stacked>First Name *</ion-label>
+                    <ion-input type="text" placeholder="Firstname" [(ngModel)]="data.firstname" name="firstname" #firstname='ngModel' required></ion-input>               
+                </ion-item>                
+                <ion-item no-padding>
+                    <ion-label stacked>Last Name *</ion-label>                    
+                    <ion-input type="text" placeholder="Lastname" [(ngModel)]="data.lastname" name="lastname" #lastname='ngModel' required></ion-input>
+                </ion-item>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>City *</ion-label>                  
+                    <ion-input type="text" placeholder="City" [(ngModel)]="data.city" name="city" #city='ngModel' required></ion-input>
+                </ion-item>
+                <ion-item no-padding>
+                    <ion-label stacked>U.S Phone Number *</ion-label>
+                    <ion-input type="text" placeholder="U.S. Phone Number" [(ngModel)]="data.usphone" name="usphone" #usphone='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Email Address *</ion-label>
+                    <ion-input type="text" placeholder="Your E-mail" [(ngModel)]="data.email" name="email" #email='ngModel' pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$" required></ion-input>		  			    
+                </ion-item>
+                <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                    <div [hidden]="!email.errors.pattern" class="alert alert-danger">
+                        Please enter a valid email address
+                    </div>
+                </div>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Password *</ion-label>
+                    <ion-input type="password" placeholder="Password" [(ngModel)]="data.pass" name="pass" #pass='ngModel' required minlength="5"></ion-input>		  			    
+                </ion-item>
+                <div *ngIf="pass.errors && (pass.dirty || pass.touched)" class="errormsg alert alert-danger">
+                    <div [hidden]="!pass.errors.minlength" class="alert alert-danger">
+                        Password should be atleast 5 characters in length
+                    </div>
+                </div>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Confirm Password *</ion-label>
+                    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="data.confirmpass" name="confirmpass" #confirmpass='ngModel' (input)="onInput($event)" required></ion-input>		  			    
+                </ion-item>
+                <div class="errormsg" *ngIf="m == 0">Passwords do not match</div>
+                <div class="errormsg" *ngIf="m == 1">Passwords matched</div>
+
+            </ion-list>
+
+            <button ion-button  color="theme" class="custom-btn" type="submit"  (tap)="signup(myform)">Submit</button>
+        </form>
+    </div>
+</ion-content>

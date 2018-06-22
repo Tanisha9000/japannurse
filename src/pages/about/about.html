@@ -1,0 +1,370 @@
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <ion-title>APPLY</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="register">
+        <div class="oss"><h2>OSS Job Application</h2>
+            <p>Please complete the application below as completely and accurately as possible. Items with a * are required fields. This information will be used to help determine the best job for you based on your qualifications.</p></div>
+    </div>
+
+    <div class="form-box">
+        <form #myform="ngForm">
+            <ion-list no-lines style="margin-bottom: 30px;">
+
+                <ion-item no-padding>
+                    <ion-label stacked>Today's Date *</ion-label>
+                    <ion-input type="text" placeholder="MM-DD-YYY" [(ngModel)]="data.todate" name="todate" [readonly]="isReadonly()"></ion-input>
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Full Name *</ion-label>
+                    <ion-input type="text" placeholder="Firstname" [(ngModel)]="data.firstname" name="firstname" #firstname='ngModel' required></ion-input>
+                    <ion-input type="text" placeholder="Lastname" [(ngModel)]="data.lastname" name="lastname" #lastname='ngModel' required></ion-input>
+                </ion-item>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Current Address *</ion-label>
+                    <ion-input type="text" placeholder="Street Address" [(ngModel)]="data.address" name="address" #address='ngModel' required></ion-input>
+                    <ion-input type="text" placeholder="City" [(ngModel)]="data.city" name="city" #city='ngModel' required></ion-input>
+                    <ion-input type="text" placeholder="State / Province / Region" [(ngModel)]="data.state" name="state" #state='ngModel' required></ion-input>
+                    <ion-input type="text" placeholder="Postal / Zip Code" [(ngModel)]="data.zip" name="zip" #zip='ngModel' required></ion-input>
+                    <ion-input type="text" placeholder="Country" [(ngModel)]="data.country" name="country"  #country='ngModel' required></ion-input>
+                </ion-item>
+
+<!--                <ion-item no-padding>
+                    <ion-label stacked>Email Address *</ion-label>
+                    <ion-input type="text" placeholder="Your E-mail" [(ngModel)]="data.email" name="email" #email='ngModel' pattern="^[a-z0-9]+(\.[_a-z0-9]+)+([@{1}])+(\.[a-z0-9-]+)+([.{1}])(\.[a-z]{1,15})$" required></ion-input>		  			    
+                </ion-item>
+                <div *ngIf="email.errors && (email.dirty || email.touched)" class="errormsg alert alert-danger">
+                    <div [hidden]="!email.errors.pattern" class="alert alert-danger">
+                        Please enter a valid email address
+                    </div>
+                </div>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Password *</ion-label>
+                    <ion-input type="password" placeholder="Password" [(ngModel)]="data.pass" name="pass" #pass='ngModel' required minlength="5"></ion-input>		  			    
+                </ion-item>
+                <div *ngIf="pass.errors && (pass.dirty || pass.touched)" class="errormsg alert alert-danger">
+                    <div [hidden]="!pass.errors.minlength" class="alert alert-danger">
+                        Password should be atleast 5 characters in length
+                    </div>
+                </div>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Confirm Password *</ion-label>
+                    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="data.confirmpass" name="confirmpass" #confirmpass='ngModel' (input)="onInput($event)" required></ion-input>		  			    
+                </ion-item>
+                <div class="errormsg" *ngIf="m == 0">Passwords do not match</div>
+                <div class="errormsg" *ngIf="m == 1">Passwords matched</div>-->
+
+                <ion-item no-padding>
+                    <ion-label stacked>U.S. Phone Number</ion-label>
+                    <ion-input type="text" placeholder="U.S. Phone Number" [(ngModel)]="data.usphone" name="usphone" #usphone='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Overseas Phone </ion-label>
+                    <ion-input type="text" placeholder="JPN Phone Number" [(ngModel)]="data.overphone" name="overphone" #overphone='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Position you are applying for *</ion-label>
+                    <ion-input type="text" placeholder="" [(ngModel)]="data.posapply" name="posapply" #posapply='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>How did you find out about this job position? *</ion-label>
+                    <ion-input type="text" placeholder="" [(ngModel)]="data.jobpos" name="jobpos" #jobpos='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Expected Hourly Rate? *</ion-label>
+                    <ion-input type="text" placeholder="" [(ngModel)]="data.expectrate" name="expectrate" #expectrate='ngModel' required></ion-input>		  			    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked >
+                        Have you ever been the subject of a malpractice claim? (indicate final disposition of case in comments) *
+                    </ion-label>	
+                </ion-item>
+                <ion-list radio-group class="myradio" [(ngModel)]="data.malpractice" name="malpractice" #malpractice='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Have you ever been a defendant in a felony or misdemeanor case? (indicate final disposition of case in comments) *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.felony" name="felony" #felony='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding> 
+                    <ion-label stacked>Has your license to practice or DEA certification ever been revoked or restricted in any state? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.license" name="license" #license='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Have you ever been arrested for or charged with a crime involving a child? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.arrested" name="arrested" #arrested='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Do you have any physical or mental impairment that could limit your clinical practice? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.impairment" name="impairment" #impairment='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Have you been hospitalized for any reason during the past 5 years? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.hospitalise" name="hospitalise" #hospitalise='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Are you currently receiving or have you ever received formal mental health therapy or treatment? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.treatment" name="treatment" #treatment='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>	
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Are you currently receiving, or have you in the past ever received, treatment or therapy for any alcohol or drug-related condition? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.drug" name="drug" #drug='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Have you ever been unlawfully involved in the use of controlled substances? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.substances" name="substances" #substances='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>If any of questions above is answered, “yes”, please write a detailed explanation.</ion-label>
+                    <ion-textarea rows="5" [(ngModel)]="data.explanation" name="explanation"></ion-textarea>		    
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Are you a U.S. Citizen? *</ion-label>		    	  			    
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.uscitizen" name="uscitizen" #uscitizen='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>If yes, do you hold dual citizenship or a passport from a foreign country?</ion-label>
+                    <ion-input type="text" placeholder="What country do you hold dual citizenship?" [(ngModel)]="data.passport" name="passport"></ion-input>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>If yes, what is your state of legal residence, or domicile?</ion-label>
+                    <ion-input type="text" placeholder="State / Province / Region" [(ngModel)]="data.residence" name="residence" ></ion-input>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Professional License *</ion-label>
+                    <ion-input type="text" placeholder="Professional License" [(ngModel)]="data.professional" name="professional" #professional='ngModel' required></ion-input>		
+                </ion-item>  
+
+                <ion-item no-padding>
+                    <ion-label stacked>Education Degree *</ion-label>
+                    <ion-input type="text" placeholder="Education Degree" [(ngModel)]="data.education" name="education" #education='ngModel' required></ion-input>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Immunization Expiration Date *</ion-label>
+                    <ion-input type="text" placeholder="Expiration Date" [(ngModel)]="data.immunization" name="immunization" #immunization='ngModel' required></ion-input>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>List other Certification and expiration dates: CPR *</ion-label>
+                    <ion-input type="text" placeholder="Expiration Date CPR" [(ngModel)]="data.certification" name="certification" #certification='ngModel' required></ion-input>		
+                </ion-item>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>Board Certification: *</ion-label>
+                    <ion-input type="text" placeholder="Board Certification" [(ngModel)]="data.board" name="board" #board='ngModel' required></ion-input>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Please provide any additional information or factors to be used in a Contract Award Decision, such as commendations or documentation of any awards you may have received, etc. *</ion-label>
+                    <ion-textarea [(ngModel)]="data.contract" name="contract"></ion-textarea>		
+                </ion-item>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Date of Arrival to Overseas Location *</ion-label>
+                </ion-item>
+
+                <div class="mydate">
+<!--                    <ion-item no-padding>
+                        <ion-datetime  displayFormat="h" style="z-index: 99;" placeholder="MM" [(ngModel)]="data.month" name="month" #month='ngModel' required></ion-datetime>			    	  			    
+                    </ion-item>-->
+                    <!--                    <ion-item no-padding>
+                                            <ion-datetime  displayFormat="DD" style="z-index: 99;" placeholder="DD" [(ngModel)]="data.dateee" name="dateee" #dateee='ngModel' required></ion-datetime>			    	  			    
+                                        </ion-item>-->
+                    <ion-item placeholder="MM" class="dd">
+                        <ion-select  placeholder="MM" [(ngModel)]="data.month" name="month" #month='ngModel' required>
+                            <ion-option *ngFor="let dd of dates" [value]="dd" selected>{{dd}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item placeholder="DD" class="dd">
+                        <ion-select  placeholder="DD" [(ngModel)]="data.dateee" name="dateee" #dateee='ngModel' required>
+                            <ion-option *ngFor="let m of allmonths" [value]="m" selected>{{m}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+                </div>
+
+                <ion-item no-padding>
+                    <ion-label stacked>Expected DEROS Date *</ion-label>	  			    
+                </ion-item>
+
+                <div class="mydate">
+<!--                    <ion-item no-padding >
+                        <ion-datetime  displayFormat="h"  style="z-index: 99;" placeholder="MM" [(ngModel)]="data.derosmonth" name="derosmonth" #derosmonth='ngModel' required></ion-datetime>			    	  			    
+                    </ion-item>-->
+                    <!--                    <ion-item no-padding >
+                                            <ion-datetime  displayFormat="DD"  style="z-index: 99;" placeholder="DD" [(ngModel)]="data.derosdatee" name="derosdatee" #derosdatee='ngModel' required></ion-datetime>			    	  			    
+                                        </ion-item>-->
+                    <ion-item placeholder="MM"  class="dd">
+                        <ion-select placeholder="MM" [(ngModel)]="data.derosmonth" name="derosmonth" #derosmonth='ngModel' required>
+                            <ion-option *ngFor="let d of dates" [value]="d" selected>{{d}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item placeholder="DD"  class="dd">
+                        <ion-select placeholder="DD" [(ngModel)]="data.derosdatee" name="derosdatee" #derosdatee='ngModel' required>
+                            <ion-option *ngFor="let m of allmonths" [value]="m" selected>{{m}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+
+
+                <ion-item no-padding>
+                    <ion-label stacked>By submitting your resume, you are certifying that the above information you have entered is true. After contract award, all of the information provided may be verified during the credentialing process as applicable. At that time, you may be required to provide varying documentation and a signature. If you submit false information, the following actions may occur: ​ a) Your contract may be terminated for cause. This action may initiate the suspension and debarment process, which could result in the determination that you are no longer eligible for employment. b) You may lose your clinical privileges. If that occurs, an adverse credentialing action report will be forwarded to your State licensing bureau and the National Practitioners Databank. Do you accept? *</ion-label>
+                </ion-item>
+
+                <ion-list radio-group class="myradio" [(ngModel)]="data.finalsubmit" name="finalsubmit" #finalsubmit='ngModel' required>
+                    <ion-item no-padding>
+                        <ion-label no-margin >Yes</ion-label>
+                        <ion-radio  item-left value="true" checked></ion-radio>
+                    </ion-item>
+                    <ion-item  no-padding>
+                        <ion-label no-margin>No</ion-label>
+                        <ion-radio  item-left value="false"></ion-radio>
+                    </ion-item>
+                </ion-list>
+
+            </ion-list>
+
+            <button ion-button  color="theme" class="custom-btn" type="submit"  (tap)="signup(myform)">Submit</button>
+
+        </form>
+    </div>
+</ion-content>

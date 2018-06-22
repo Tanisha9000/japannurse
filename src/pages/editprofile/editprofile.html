@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar color="theme" text-center>
+
+        <ion-title>EDIT PROFILE</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="profilepic">
+        <div class="pic"><img [src]="userimage"/></div>
+        <div class="camera" (click)="presentActionSheet()"><img src="assets/imgs/camera.png"/></div>
+    </div>
+
+    <div class="profiledetail">
+        <ion-list class="box" no-lines>	    
+            <ion-item>
+                <ion-label>Username :</ion-label>
+                <ion-input type="text" placeholder="Username" [(ngModel)]="data.username" name="username"></ion-input>
+            </ion-item>
+
+            <ion-item class="emailer">
+                <ion-label>Email :</ion-label>
+                <ion-input type="text" placeholder="user@gmail.com" [readonly]="isReadonly()" [(ngModel)]="data.email" name="email"></ion-input>
+                <button icon-only clear item-end> 
+                    <img src="assets/imgs/error.png">
+                </button>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>US Contact Info :</ion-label>
+                <ion-input type="number" placeholder="9876543210" [(ngModel)]="data.uscontact" name="uscontact"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label>City :</ion-label>
+                <ion-input type="text" placeholder="City" [(ngModel)]="data.city" name="city"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Gender :</ion-label>
+                <ion-select placeholder="Gender" [(ngModel)]="data.gender" name="gender">
+                    <ion-option value="female" selected>Female</ion-option>
+                    <ion-option value="male">Male</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <button ion-button full color="theme" class="custom-btn" (tap)="editProfile()">Save</button>
+
+</ion-content>

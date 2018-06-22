@@ -1,0 +1,32 @@
+page-pdf {
+	
+	.pdfheader{
+		    background: #fff;
+		h2{
+			font-size: 14px;
+	    color: #383838;
+	    font-weight: 600;
+	    margin: 0px;
+	    text-align: center;
+		}
+		.toolbar-background{
+			border: 0px;
+		}
+	}
+	.pdf{
+		box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.04);
+		 margin-bottom: 20px;
+		 border-radius: 5px;
+		p{
+			    color: #707070;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0px;
+    text-align:center;
+		}
+		iopn-grid{
+			    padding: 0px 5px;
+			border-radius: 5px;
+		}
+	}
+}

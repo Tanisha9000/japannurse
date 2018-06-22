@@ -1,0 +1,46 @@
+page-filter {
+
+	.toolbar-title{
+		color: #000;
+	}
+
+.cross{
+	    margin-left: 14px;
+}
+
+.header .toolbar-background{
+  
+    border-color: rgba(0, 0, 0, 0.3);
+    background: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+
+    background-image:none;
+   
+}
+
+ion-select{
+	 color: #707070;
+  font-size: 14px;
+  font-weight: 400;
+   padding-left: 10px;
+    background: #F9F9F9;
+    background: #dededefa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  
+}
+
+.item-label-stacked .select, .item-label-floating .select{
+	    padding-left: 10px;
+}
+.bar-button-default, .bar-button-default.bar-button-default, .bar-button-clear-default {
+    color: #000000;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+}
+

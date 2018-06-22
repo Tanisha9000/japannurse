@@ -1,0 +1,43 @@
+<ion-header>
+
+    <ion-navbar color="theme" text-center>
+        <ion-title>LOGIN</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="logo" >		
+        <img src="assets/imgs/mylogo.png"/>
+    </div>
+
+    <div class="form-box">
+        <form [formGroup]="myform" (submit)="home(myform)">
+            <ion-list no-lines>
+
+                <ion-item>
+                    <ion-input type="email" placeholder="E-mail" formControlName="email" [class.invalid]="!myform.controls.email.valid && (myform.controls.email.dirty)"></ion-input>
+                </ion-item>                
+                <ion-item class="error" *ngIf="!myform.controls.email.valid  && (myform.controls.email.dirty)">
+                <p >Please enter valid email address.</p>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input type="password" placeholder="Password" formControlName="pass"></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <button ion-button full color="theme" class="custom-btn" type="submit">Sign In</button>
+<!--[disabled]="!myform.valid"-->
+        </form>
+
+        <div class="forgot-box">
+            <p class="forgot" (click)="forgot()">Forgot Password ?</p>
+            <p class="dont">Dont have an account? <span class="signup" (click)="signup()">Sign Up</span></p>
+        </div>
+
+    </div>
+
+</ion-content>
+

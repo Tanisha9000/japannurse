@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar color="theme" text-center>
+        <button ion-button menuToggle>
+            <ion-icon><img src="assets/imgs/menu.png"/></ion-icon>
+        </button>
+        <ion-title>SEARCH JOBS</ion-title>
+
+        <ion-buttons end>
+            <button ion-button CLASS="notify" (click)="notification()" >
+                <ion-icon ><img src="assets/imgs/notification.png"/></ion-icon>
+                <div class="circle" *ngIf="noticount"><span>{{noticount}}</span></div>
+            </button>
+            <button ion-button (click)="filter()">
+                    <ion-icon ><img src="assets/imgs/filter.png"/></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
+    <ion-toolbar class="srchouter">
+        <ion-searchbar class="mysearch"
+                       [(ngModel)]="myInput"
+                       [showCancelButton]="shouldShowCancel"
+                       (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)">
+        </ion-searchbar> 
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="staffbox" *ngFor="let job of alljobs">
+         <ion-list class="" no-lines>
+            <ion-item no-padding>
+                <ion-thumbnail item-start>
+                    <img [src]="job.img"/>
+                </ion-thumbnail>
+                <!--                {{job.restdata | typeof}} simer-->
+                <h2>{{job?.restdata?.department?.title}}</h2>
+                <p>{{job?.restdata?.title}}</p> 
+                <p class="abu"><img src="assets/imgs/arrow2.png"/>{{job.location}}</p>
+                <button ion-button  color="theme" class="custom-btn" (click)="jobview(job.restdata.id)" >View jobs</button>
+            </ion-item>
+        </ion-list>
+    </div><!--end-->
+</ion-content>
